@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import axios from "axios";
 import { useVehicles } from "../context/VehicleContext";
+import api from "../axios/axios";
 
 export default function PriceFilter() {
     const [categories, setCategories] = useState([]);
@@ -18,7 +18,7 @@ export default function PriceFilter() {
     useEffect(() => {
         const fetchCats = async () => {
             try {
-                const res = await axios.get('http://localhost:3001/api/categories');
+                const res = await api.get('/categories');
                 setCategories(res.data);
             } catch (err) { console.error("Lỗi lấy categories", err); }
         };
@@ -31,7 +31,7 @@ export default function PriceFilter() {
             // Chỉ gọi API nếu đã chọn category_id
             if (filters.category_id) {
                 try {
-                    const res = await axios.get(`http://localhost:3001/api/brands?category_id=${filters.category_id}`);
+                    const res = await api.get(`/brands?category_id=${filters.category_id}`);
                     setBrands(res.data);
                 } catch (err) { console.error("Lỗi lấy brands", err); }
             } else {

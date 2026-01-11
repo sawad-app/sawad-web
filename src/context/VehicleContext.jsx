@@ -1,6 +1,7 @@
 import axios from "axios";
 import { createContext, useContext, useState } from "react";
 import { toast } from 'sonner';
+import api from "../axios/axios";
 export const VehicleContext = createContext();
 
 export const VehicleProvider = ({ children }) => {
@@ -12,8 +13,8 @@ export const VehicleProvider = ({ children }) => {
         setLoading(true);
         setError(null);
         try {
-            const res = await axios.post(
-                "http://localhost:3001/api/vehicles",
+            const res = await api.post(
+                "/vehicles",
                 filters
             );
             setVehicles(res.data);
