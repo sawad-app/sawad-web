@@ -1,0 +1,33 @@
+# Dependency directories (Rất quan trọng)
+node_modules/
+jspm_packages/
+
+# Build outputs (Kết quả sau khi build FE)
+dist/
+build/
+out/
+
+# Environment variables (Bảo mật - Không được đẩy lên)
+.env
+.env.production
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# Editor & System files (Tệp rác của hệ điều hành và IDE)
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Excel data (Nếu bạn không muốn lộ file data gốc lên GitHub)
+data/*.xlsx
