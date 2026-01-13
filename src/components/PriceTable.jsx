@@ -1,7 +1,9 @@
 import { useVehicles } from "../context/VehicleContext";
+import { Pagination } from "antd";
 
 export default function PriceTable() {
     const { vehicles, loading, error } = useVehicles();
+
     const formatVND = (val) => val ? new Intl.NumberFormat('vi-VN').format(val) + " VND" : "---";
     if (loading) return <div className="text-center p-10">Đang tải dữ liệu...</div>;
     if (error) return <div className="text-center p-10 text-red-500">{error}</div>;
@@ -38,6 +40,7 @@ export default function PriceTable() {
                             <th className="px-4 py-3 font-semibold">
                                 Định giá loại B
                             </th>
+
                         </tr>
                     </thead>
 
@@ -74,11 +77,14 @@ export default function PriceTable() {
                                 <td className="px-4 py-3 text-center font-semibold border-r border-gray-200">
                                     {formatVND(item.price_b)}
                                 </td>
+
+
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
+
         </div>
     );
 }

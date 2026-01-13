@@ -1,4 +1,3 @@
-import axios from "axios";
 import { createContext, useContext, useState } from "react";
 import { toast } from 'sonner';
 import api from "../axios/axios";
@@ -9,6 +8,7 @@ export const VehicleProvider = ({ children }) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
+
     const fetchVehicles = async (filters) => {
         setLoading(true);
         setError(null);
@@ -17,6 +17,7 @@ export const VehicleProvider = ({ children }) => {
                 "/vehicles",
                 filters
             );
+
             setVehicles(res.data);
             if (res.data.length === 0) {
                 toast.info("Không tìm thấy xe nào khớp với bộ lọc", {
