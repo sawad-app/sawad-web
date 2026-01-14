@@ -65,7 +65,7 @@ export default function PriceFilter() {
                 🔍 BẢNG ĐỊNH GIÁ XE
             </h2>
             <p className="flex items-center justify-center gap-2 text-md mb-6">
-                <span>📅</span> Cập nhật: Ngày 19/05/2025, số quyết định: 02.2025/BĐGM/05.2025
+                <span>📅</span> Cập nhật: Ngày 14/01/2026
 
             </p>
 
@@ -92,7 +92,7 @@ export default function PriceFilter() {
                     className='border rounded px-2 py-1'
                 >
                     <option value="">Chọn năm</option>
-                    {Array.from({ length: 2024 - 2010 + 1 }, (_, i) => 2024 - i).map((year) => (
+                    {Array.from({ length: 2026 - 2010 + 1 }, (_, i) => 2026 - i).map((year) => (
                         <option key={year} value={year}>
                             {year}
                         </option>
