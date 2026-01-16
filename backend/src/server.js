@@ -20,7 +20,7 @@ app.use(express.json());
 
 // Kết nối DB và đồng bộ model
 connectDB();
-sequelize.sync({ alter: true }).then(() => {
+sequelize.sync().then(() => {
     console.log("Database và table đã sẵn sàng");
 })
 
